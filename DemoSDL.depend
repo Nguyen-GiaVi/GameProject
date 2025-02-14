@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1739072400 source:d:\filenewsdl\demosdl\main.cpp
+	<iostream>
+	<SDL.h>
+
+1738938222 source:d:\filenewsdl\demosdl\example1.c
+	<SDL.h>
+
+1738938555 source:d:\filenewsdl\demosdl\example1.cpp
+	<iostream>
+	<SDL.h>
+
