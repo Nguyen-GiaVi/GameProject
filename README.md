@@ -1,4 +1,16 @@
 # GameProject
+## 👨‍💻 Author & Information
+
+**Nguyen Gia Vi**  
+🎓 Sinh viên Khoa Công nghệ Thông tin  
+🏫 Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội (UET)  
+📍 Hà Nội, Việt Nam  
+
+🌐 **GitHub**: [Nguyen-Gia-Vi](https://github.com/Nguyen-GiaVi) 
+📘 **Facebook**: [facebook.com.giavi](https://www.facebook.com/giavi.nguyen.165).
+
+[![Follow on GitHub](https://img.shields.io/github/followers/Nguyen-GiaVi?label=Follow%20%40Nguyen-GiaVi&style=social)](https://github.com/Nguyen-GiaVi)
+
 # Game: 🍦 Doraemon and Ice Cream World
 
 # Describe:
