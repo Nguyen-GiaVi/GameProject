@@ -32,6 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Constants.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="GameState.h" />
+		<Unit filename="Item.cpp" />
+		<Unit filename="Item.h" />
+		<Unit filename="Texture.cpp" />
+		<Unit filename="Texture.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

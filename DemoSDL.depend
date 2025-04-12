@@ -1,7 +1,10 @@
 # depslib dependency file v1.0
-1739072400 source:d:\filenewsdl\demosdl\main.cpp
-	<iostream>
+1744390707 source:d:\filenewsdl\demosdl\main.cpp
 	<SDL.h>
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"Game.h"
 
 1738938222 source:d:\filenewsdl\demosdl\example1.c
 	<SDL.h>
@@ -9,4 +12,45 @@
 1738938555 source:d:\filenewsdl\demosdl\example1.cpp
 	<iostream>
 	<SDL.h>
+
+1744392072 source:d:\filenewsdl\demosdl\game.cpp
+	"Game.h"
+	"Constants.h"
+	"Texture.h"
+	"Item.h"
+	<iostream>
+
+1744390707 d:\filenewsdl\demosdl\game.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	<vector>
+	"GameState.h"
+
+1744390707 d:\filenewsdl\demosdl\gamestate.h
+	<SDL.h>
+
+1744390707 d:\filenewsdl\demosdl\constants.h
+	<string>
+
+1744391957 d:\filenewsdl\demosdl\texture.h
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+
+1744390707 d:\filenewsdl\demosdl\item.h
+	<vector>
+	"GameState.h"
+
+1744391993 source:d:\filenewsdl\demosdl\item.cpp
+	"Item.h"
+	"Texture.h"
+	"Constants.h"
+	<cstdlib>
+
+1744391957 source:d:\filenewsdl\demosdl\texture.cpp
+	"Texture.h"
+	<SDL_image.h>
+	<iostream>
 
