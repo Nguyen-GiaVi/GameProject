@@ -1,12 +1,12 @@
 #define SDL_MAIN_HANDLED
-#include <iostream>
 #include <SDL.h>
 #include <ctime>
 #include <cstdlib>
+#include <iostream>
 #include "Game.h"
 
 int main(int argc, char* args[]) {
-    // Seed random number generator
+    // Seed the random number generator
     srand((unsigned int)time(0));
 
     // Create game instance
@@ -14,18 +14,25 @@ int main(int argc, char* args[]) {
 
     // Initialize game
     if (!game.init()) {
-        std::cout << "Failed to initialize!" << std::endl;
+        std::cout << "Khởi tạo thất bại!\n";
         return -1;
     }
 
-    // Load game media
+    // Load media
     if (!game.loadMedia()) {
-        std::cout << "Failed to load media!" << std::endl;
+        std::cout << "Load media thất bại!\n";
         return -1;
     }
 
-    // Run the game
-    game.run();
+    // Game loop
+    while (game.isRunning()) {
+        game.handleEvents();
+        game.update();
+        game.render();
+
+        // Cap the frame rate
+        SDL_Delay(16); // ~60 FPS
+    }
 
     return 0;
 }

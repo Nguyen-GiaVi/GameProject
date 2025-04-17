@@ -2,28 +2,53 @@
 #define GAME_H_INCLUDED
 
 #include <SDL.h>
-#include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <SDL_mixer.h>
-#include <iostream>
-#include <vector>
-#include <string>
+#include <SDL_image.h>
 #include "GameState.h"
 #include "Item.h"
+#include <vector>
 
 class Game {
+public:
+    Game();
+    ~Game();
+
+    bool init();
+    bool loadMedia();
+    void close();
+
+    bool isButtonClicked(const Button &button, int x, int y);
+    void resetGame();
+
+    void handleEvents();
+    void update();
+    void render();
+
+    bool isRunning() { return !quit; }
+
 private:
-    // SDL Components
+    // SDL components
     SDL_Window* gWindow;
     SDL_Renderer* gRenderer;
     TTF_Font* gFont;
     TTF_Font* largeFont;
     Mix_Music* gMusic;
 
-    // Textures
+    // Game textures
     SDL_Texture* gTapScreenTexture;
     SDL_Texture* gGamePlayScreenTexture;
     SDL_Texture* gEndGameScreenTexture;
+    SDL_Texture* gGameTitleTexture;
+
+    // Button textures
+    SDL_Texture* gPlayButtonTexture;
+    SDL_Texture* gExitButtonTexture;
+    SDL_Texture* gSoundOnTexture;
+    SDL_Texture* gSoundOffTexture;
+    SDL_Texture* gMenuButtonTexture;
+    SDL_Texture* gContinueButtonTexture;
+    SDL_Texture* gRetryButtonTexture;
 
     // Character textures
     SDL_Texture* gCharacterTexture;
@@ -32,37 +57,38 @@ private:
     SDL_Texture* gMoveRightTexture;
     SDL_Texture* gMoveLeftTexture;
 
-    // Game state and variables
+    // Cloud texture
+    SDL_Texture* gCloudTexture;
+
+    // Game state
     GameState gameState;
-    std::vector<GameItem> gameItems;
+    bool quit;
+    bool soundEnabled;
+
+    // Character state
     SDL_Rect characterRect;
+    bool movingLeft, movingRight, jumping;
+    int jumpVelocity;
+    int gravity;
+
+    // Game progress
     Uint32 startPlayTime;
     Uint32 currentTime;
     Uint32 lastSpawnTime;
     int score;
     int hearts;
 
-    // Character movement variables
-    bool movingLeft;
-    bool movingRight;
-    bool jumping;
-    int jumpVelocity;
-    int gravity;
+    // Buttons
+    Button playButton;
+    Button exitButton;
+    Button soundButton;
+    Button menuButton;
+    Button continueButton;
+    Button retryButton;
 
-public:
-    Game();
-    ~Game();
-
-    bool init();
-    bool loadMedia();
-    void close();
-    void handleEvents(SDL_Event& e, bool& quit);
-    void update();
-    void render();
-    void run();
-
-    // Getter for renderer (needed by other components)
-    SDL_Renderer* getRenderer() const { return gRenderer; }
+    // Game items and clouds
+    std::vector<GameItem> gameItems;
+    std::vector<Cloud> clouds;
 };
 
-#endif // GAME_H_INCLUDED
+#endif // GAME_H
