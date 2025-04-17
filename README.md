@@ -1,64 +1,57 @@
-# GameProject
-## 👨‍💻 Author & Information
+🍦 Doraemon and Ice Cream World 🚀
 
-**Nguyen Gia Vi**  
-🎓 Sinh viên Khoa Công nghệ Thông tin  
-🏫 Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội (UET)  
-📍 Hà Nội, Việt Nam  
+-------------------------------------
+🎮 TÁC GIẢ: Nguyễn Gia Vĩ
+🏫 Trường: ĐH Công nghệ - ĐHQGHN (UET)
+📚 Khoa: Công nghệ Thông Tin
+🌐 GitHub: https://github.com/Nguyen-GiaVi
+📘 Facebook: https://fb.com/giavi.nguyen.165
+-------------------------------------
 
-🌐 **GitHub**: [Nguyen-Gia-Vi](https://github.com/Nguyen-GiaVi) 
-📘 **Facebook**: [facebook.com.giavi](https://www.facebook.com/giavi.nguyen.165).
+📂 Image:
+🔹 Màn hình chờ:    ./assets/tapScreen.png
+🔹 Màn hình chơi:  ./assets/gamePlayScreen.png
+🔹 Màn hình kết thúc: ./assets/endGameScreen.png
 
-[![Follow on GitHub](https://img.shields.io/github/followers/Nguyen-GiaVi?label=Follow%20%40Nguyen-GiaVi&style=social)](https://github.com/Nguyen-GiaVi)
-
-# Game: 🍦 Doraemon and Ice Cream World
-
-# Describe:
-Một game phiêu lưu nhẹ nhàng với nhân vật Doraemon trong thế giới kem ngọt ngào! Thu thập kem để ghi điểm, nhưng cẩn thận với những viên băng lạnh!
-
-## 🎮 Introduce
-- **Thể loại**: 2D Platformer / Arcade  
-- **Cách chơi**: Điều khiển Doraemon di chuyển để hứng các loại kem rơi từ trên trời, tránh viên băng trừ điểm.  
-- **Thời gian**: 150 giây mỗi lượt chơi.  
-
-## 🖼️ Screen
-1. **Start Screen**:  
-   - Nhấn nút **"Play"** để bắt đầu.  
-
-2. **Play Screen**:  
-   - Hiển thị: **Score**  **Time left**  **Hearts** và **Target Point** ở mép dưới.  
-   - Nhân vật: Doraemon với 4 trạng thái:  
-     - Đứng yên 
-     - Nhảy
-     - Di chuyển trái
-     - Di chuyển phải
-   - Thắng hay thua tùy vào khả năng của bạn!
-
-3. **End Screen**:
-   - Hiển thị **Total Score** ở giữa màn hình.  
-
-## 🕹️ Game mechanics
-### 🎯 Items
-| Vật phẩm       |   Điểm   |
-|----------------|----------|
-| Kem Loại 1     |   +50    |
-| Kem Loại 2     |   +30    |
-| Kem Loại 3     |   +20    |
-| **Băng**       | **-300** |
-
-### 🎮 Control
-- **Phím ← →**: Di chuyển trái/phải  
-- **Phím ↑**: Nhảy   
-
-## 🎵 Music
-- Nhạc nền: Lụm đâu đó nhưng không nhớ nguồn. 
-
-## 📥 Setting
-### System Requirements
-- Hệ điều hành: Windows 7/10/11  
-- Thư viện: SDL2, SDL_image, SDL_mixer, SDL_ttf  
-
-### Running Instructions
-1. Clone repository:  
-   ```bash
+-------------------------------------
+🛠️ CÀI ĐẶT & CHẠY GAME:
+1️⃣ Clone repo:
    git clone https://github.com/Nguyen-GiaVi/GameProject.git
+   cd GameProject
+
+2️⃣ Cài thư viện (Ubuntu):
+   sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+
+3️⃣ Biên dịch:
+   g++ main.cpp Game.cpp Texture.cpp Item.cpp -o main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+
+4️⃣ Chạy game: 
+   ./main
+
+-------------------------------------
+🎮 ĐIỀU KHIỂN:
+╔════════════╦══════════════════════╗
+║   PHÍM     ║     CHỨC NĂNG       ║
+╠════════════╬══════════════════════╣
+║ ← →        ║ Di chuyển trái/phải ║
+║ ↑          ║ Nhảy                ║
+║ Click chuột║ Tương tác menu      ║
+╚════════════╩══════════════════════╝
+
+-------------------------------------
+🌟 TÍNH NĂNG CHÍNH:
+✅ 3 chế độ màn hình sinh động
+✅ 4 trạng thái nhân vật chi tiết
+✅ Hệ thống vật phẩm ngẫu nhiên:
+   - 🍦 Kem (+20/+30/+50 điểm)
+   - ❄️ Băng (-300 điểm)
+✅ Đồ họa PNG + Hiệu ứng âm thanh
+✅ Hệ thống tính điểm + Thời gian
+
+-------------------------------------
+📞 LIÊN HỆ:
+⭐ GitHub: https://github.com/Nguyen-GiaVi
+📘 Facebook: https://www.facebook.com/giavi.nguyen.165
+
+-------------------------------------
+© 2025 - Bản quyền thuộc về Nguyễn Gia Vĩ
