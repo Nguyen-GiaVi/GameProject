@@ -49,9 +49,4 @@
 ✅ Hệ thống tính điểm + Thời gian
 
 -------------------------------------
-📞 LIÊN HỆ:
-⭐ GitHub: https://github.com/Nguyen-GiaVi
-📘 Facebook: https://www.facebook.com/giavi.nguyen.165
-
--------------------------------------
 © 2025 - Bản quyền thuộc về Nguyễn Gia Vĩ
