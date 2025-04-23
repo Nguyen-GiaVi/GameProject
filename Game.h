@@ -71,6 +71,9 @@ private:
     int jumpVelocity;
     int gravity;
 
+    bool isSlowed;
+    Uint32 slowStartTime;
+
     // Game progress
     Uint32 startPlayTime;
     Uint32 currentTime;

@@ -37,6 +37,8 @@ Game::Game() :
     jumping(false),
     jumpVelocity(-15),
     gravity(1),
+    isSlowed(false),
+    slowStartTime(0),
     startPlayTime(0),
     currentTime(0),
     lastSpawnTime(0),
@@ -286,6 +288,8 @@ void Game::resetGame() {
     movingRight = false;
     jumping = false;
     jumpVelocity = -15;
+    isSlowed = false;
+    slowStartTime = 0;
 }
 
 void Game::handleEvents() {
@@ -417,10 +421,10 @@ void Game::update() {
 
         // Update character position
         if (movingLeft) {
-            characterRect.x -= 10;
+            characterRect.x -= (isSlowed) ? 5 : 10;
         }
         if (movingRight) {
-            characterRect.x += 10;
+            characterRect.x += (isSlowed) ? 5 : 10;
         }
 
         // Keep character within screen bounds
@@ -455,12 +459,12 @@ void Game::update() {
 
         // Update items and check for collisions
         for (auto it = gameItems.begin(); it != gameItems.end(); ) {
-            it->rect.y += 2; // Items fall down
 
             // Ice items move randomly
             if (it->isIce) {
                 int randomShift = (remainingTimeMs > 30000) ? (rand() % 5) - 2 : (rand() % 11) - 5;
                 it->rect.x += randomShift;
+                it->rect.y += (remainingTimeMs > 30000) ? 3 : 5;
 
                 // Keep ice items within screen bounds
                 if (it->rect.x < 0) {
@@ -469,6 +473,9 @@ void Game::update() {
                 if (it->rect.x + it->rect.w > SCREEN_WIDTH) {
                     it->rect.x = SCREEN_WIDTH - it->rect.w;
                 }
+            }
+            else {
+                it->rect.y += 2;
             }
 
             // Remove items that have fallen out of screen
@@ -479,11 +486,10 @@ void Game::update() {
             // Check for collision with character
             else if (checkCollision(characterRect, it->rect)) {
                 if (it->isIce) {
-                    if (score > 300) {
-                        score += it->pointValue; // Lose points, but never go below 0
-                    } else {
-                        score = 0;
-                    }
+                    isSlowed = true;
+                    slowStartTime = SDL_GetTicks();
+
+                    score += (score > 300) ? it->pointValue : -score;
                     hearts -= 1;
 
                     if (hearts <= 0) {
@@ -497,6 +503,9 @@ void Game::update() {
                 it = gameItems.erase(it);
             } else {
                 ++it;
+            }
+            if (isSlowed && (SDL_GetTicks() - slowStartTime >= 3000)) {
+                isSlowed = false;
             }
         }
     }
